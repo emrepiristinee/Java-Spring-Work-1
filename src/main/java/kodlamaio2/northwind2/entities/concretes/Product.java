@@ -1,17 +1,20 @@
 package kodlamaio2.northwind2.entities.concretes;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity // Entity demek sen bir veritabanı nesnesisin demek
 @Table(name = "products") // veritabanın da hangi tablo?
 public class Product {
 
 	@Id // hangi id'ye göre yapılıyor
-	@GeneratedValue // id'yi otomatik arttırmak için
+	
+	@GeneratedValue(strategy = GenerationType.IDENTITY) // id'yi otomatik arttırmak için
 	@Column(name = "product_id")
 	private int id;
 
